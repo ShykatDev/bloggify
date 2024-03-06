@@ -23,13 +23,12 @@ export const useAxios = () => {
 
     const responseInterceptor = api.interceptors.response.use(
       (response) => {
-        // console.log(response);
         return response;
       },
       async (error) => {
         const originalRequest = error.config;
         console.log(originalRequest);
-        if (error.response.status === 403 && !originalRequest._retry) {
+        if (error.response.status === 500 && !originalRequest._retry) {
           originalRequest._retry = true;
 
           try {
@@ -39,6 +38,7 @@ export const useAxios = () => {
               { refreshToken }
             );
 
+            console.log(res);
             const { token } = res.data;
             setAuth({ ...auth, accessToken: token });
 

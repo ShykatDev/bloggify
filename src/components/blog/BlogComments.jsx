@@ -5,6 +5,7 @@ import { getDummyImage } from "../../utils";
 import Comment from "./Comment";
 import { useAxios } from "../../hooks/useAxios";
 import { toast } from "react-toastify";
+import { Link } from "react-router-dom";
 
 const BlogComments = ({ blog, comments, setComments }) => {
   const [content, setContent] = useState("");
@@ -39,7 +40,7 @@ const BlogComments = ({ blog, comments, setComments }) => {
           Comments ({comments?.length})
         </h2>
 
-        {loginUser && (
+        {loginUser ? (
           <div className="flex items -center space-x-4">
             {loginUser?.avatar === null && (
               <div className="flex items-center">
@@ -76,6 +77,16 @@ const BlogComments = ({ blog, comments, setComments }) => {
                 </button>
               </div>
             </div>
+          </div>
+        ) : (
+          <div className="border border-slate-800 bg-slate-900 rounded-md text-center p-3">
+            <p className="text-slate-400 font-medium hover:text-slate-300 transition-all">
+              Please{" "}
+              <Link to="/login" className="underline text-indigo-500">
+                login
+              </Link>{" "}
+              to add new comment.
+            </p>
           </div>
         )}
 

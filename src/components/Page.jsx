@@ -5,10 +5,13 @@ import RegisterPage from "../pages/RegisterPage";
 import Navbar from "./common/Navbar";
 import PrivateRoute from "./auth/PrivateRoute";
 import ProfilePage from "../pages/ProfilePage";
-import SingleBlog from "./blog/SingleBlog";
+import SingleBlog from "../pages/SingleBlog";
 import AuthorPage from "../pages/AuthorPage";
 import { useAuthor } from "../hooks/useAuthor";
 import { useAuth } from "../hooks/useAuth";
+import CreateBlog from "../pages/CreateBlog";
+import Footer from "./common/Footer";
+import ScrollToTop from "./common/ScrollToTop";
 
 const Page = () => {
   const { state } = useAuthor();
@@ -18,9 +21,11 @@ const Page = () => {
   return (
     <>
       <Navbar />
+      <ScrollToTop />
       <Routes>
         <Route element={<PrivateRoute />}>
           <Route path="/profile" element={<ProfilePage />} />
+          <Route path="/create-blog" element={<CreateBlog />} />
         </Route>
         <Route path="/" element={<Homepage />} exact />
         <Route
@@ -31,6 +36,7 @@ const Page = () => {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
       </Routes>
+      <Footer />
     </>
   );
 };

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useProfile } from "../../hooks/useProfile";
 import BlogsList from "./BlogsList";
 
@@ -12,9 +13,12 @@ const ProfileBlogs = () => {
           <p className="text-gray-400">
             No blog has been created yet. Click the write button to add.
           </p>
-          <button className="border border-gray-600 text-white text-sm px-8 py-2 md:py-3 rounded-md hover:bg-indigo-700 hover:border-indigo-700 transition-all duration-200">
+          <Link
+            to="/create-blog"
+            className="border border-gray-600 text-white text-sm px-8 py-2 md:py-3 rounded-md hover:bg-indigo-700 hover:border-indigo-700 transition-all duration-200"
+          >
             Write
-          </button>
+          </Link>
         </div>
       ) : (
         <>

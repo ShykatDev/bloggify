@@ -1,40 +1,18 @@
 import { useNavigate } from "react-router-dom";
-import { actions } from "../../actions";
 import { useProfile } from "../../hooks/useProfile";
-import axios from "axios";
-import { useAuthor } from "../../hooks/useAuthor";
 import BlogAction from "./BlogAction";
 import { useAuth } from "../../hooks/useAuth";
+import { useFetchProfile } from "../../hooks/useFetchProfile";
 
 const BlogCard = ({ blog }) => {
   const { title, content, author, likes, thumbnail } = blog;
   const { state } = useProfile();
-  const { dispatch } = useAuthor();
   const { auth } = useAuth();
   const navigate = useNavigate();
+  const { fetchProfile } = useFetchProfile(author);
 
   const loginUser = auth?.user?.id === blog?.author?.id;
-
   let user = loginUser ? state?.user ?? auth?.user : blog?.author;
-
-  const fetchProfile = async () => {
-    dispatch({ type: actions.author.DATA_FETCHING });
-    try {
-      const response = await axios.get(
-        `${import.meta.env.VITE_SERVER_BASE_URL}/profile/${author?.id}`
-      );
-
-      if (response.status === 200) {
-        dispatch({ type: actions.author.DATA_FETCHED, data: response.data });
-        navigate("/author");
-      }
-    } catch (err) {
-      dispatch({
-        type: actions.author.DATA_FETCHED_ERROR,
-        error: err.message,
-      });
-    }
-  };
 
   const viewFullBlog = () => {
     navigate(`/blogs/${blog?.id}`);
