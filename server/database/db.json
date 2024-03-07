@@ -15,16 +15,10 @@
       "email": "tapasadhikary@learnwithsumit.com",
       "firstName": "Tapas",
       "lastName": "Adhikary",
-      "avatar": "avatar-1709666874073-555648958.jpg",
-      "bio": "Creating content is my passion. After spending over a decade in software engineering, I'm on a mission to make learning easy, and practical. I create written and video content on JavaScript, Web Development, Full Stack, and Career development. 🌿",
+      "avatar": "avatar-1708764766479-243448656.png",
+      "bio": "Creating content is my passion. After spending over a decade in software engineering, I'm on a mission to make learning easy, and practical. I create written and video content on JavaScript, Web Development, Full Stack, and Career development.",
       "password": "$2b$08$p15BeTInMoszGTNI3gtwNu2XiSadWVdPXaxQPQy8XZd1jj/6yPQae",
-      "favourites": [
-        {
-          "id": "9d5598ab44600a379103",
-          "title": "Dev Retro 2022: What made me a better developer this year?",
-          "tags": "programming, algorithm, prototype, javascript"
-        }
-      ]
+      "favourites": []
     },
     {
       "id": "f810ae24754a6cdc6d01",
@@ -58,38 +52,8 @@
       "firstName": "Md",
       "lastName": "salahuddin",
       "avatar": "avatar-1708882452726-336021919.jpeg",
-      "bio": "My name is MD Salahuddin.",
+      "bio": "",
       "password": "$2b$08$At/U5W1/ASt/F3zWCqOZnO75ftNVjwR.RVf0FEhEdQ0nHkll5tJ4m",
-      "favourites": []
-    },
-    {
-      "id": "27b571afacadacd60fb5",
-      "email": "shykat@email.com",
-      "firstName": "Shykat",
-      "lastName": "Raha",
-      "avatar": "avatar-1709630866412-891143567.jpg",
-      "bio": "Hey, This is Shykat Raha. I am a front-end Developer. I love to make web features.🧩",
-      "password": "$2b$08$5qbQ74XGo5cld6lNdcxbWe8BaAP2kj1LTLCKkx1b8dODO5r/54k1u",
-      "favourites": []
-    },
-    {
-      "id": "df37d7b4e87c42fef1c8",
-      "email": "atapas@email.com",
-      "firstName": "Tapas",
-      "lastName": "Adhikary",
-      "avatar": null,
-      "bio": "",
-      "password": "$2b$08$A6eToMvYulr4dT1OcFgKdOydP0LzXiCvsHuX5y8urmAeaEI4HwRG2",
-      "favourites": []
-    },
-    {
-      "id": "01e85e76fadfbb98d3c8",
-      "email": "testac@email.com",
-      "firstName": "Test",
-      "lastName": "AC",
-      "avatar": null,
-      "bio": "",
-      "password": "$2b$08$JQ73AgAUbRmtGf6DwGKnKe5Iu3uotjQOzmXbnjjMYI0MSUCL2EgOm",
       "favourites": []
     }
   ],
@@ -115,9 +79,6 @@
         },
         {
           "id": "3d2dde4b6548275fb066"
-        },
-        {
-          "id": "27b571afacadacd60fb5"
         }
       ],
       "comments": [
@@ -150,20 +111,9 @@
             "lastName": "Hasan",
             "avatar": "avatar-1708764856675-623317122.jpg"
           }
-        },
-        {
-          "id": "11a0e26efa22a5ca1280",
-          "content": "Nice Blog.",
-          "author": {
-            "id": "27b571afacadacd60fb5",
-            "firstName": "Shykat",
-            "lastName": "Raha",
-            "avatar": "avatar-1709630866412-891143567.jpg"
-          }
         }
       ],
-      "createdAt": "2024-02-24T09:09:01.121Z",
-      "isFavourite": false
+      "createdAt": "2024-02-24T09:09:01.121Z"
     },
     {
       "id": "4321b782f360f58c8c85",
@@ -180,97 +130,6 @@
       "likes": [
         {
           "id": "346d7a36b3c41f3fbfa2"
-        },
-        {
-          "id": "27b571afacadacd60fb5"
-        }
-      ],
-      "comments": [
-        {
-          "id": "19becccf4ebf3e6cf385",
-          "content": "অনেক সুন্দর হয়েছে",
-          "author": {
-            "id": "346d7a36b3c41f3fbfa2",
-            "firstName": "Tapas",
-            "lastName": "Adhikary",
-            "avatar": "avatar-1708764766479-243448656.png"
-          }
-        }
-      ],
-      "createdAt": "2024-02-24T09:01:37.581Z",
-      "isFavourite": true
-    },
-    {
-      "id": "4321b782f360f58c8c87",
-      "title": "Create Custom Dialog with listview | Android | Java",
-      "content": "Often we might need to create a custom dialog with listview to choose different kinds of actions for a particular option. In certain cases, we use such type of menu items for menus. So, In this post, I will show you how you can create this Custom Dialog with Listview :",
-      "thumbnail": "thumbnail-1708765297564-606798153.png",
-      "author": {
-        "id": "3d2dde4b6548275fb066",
-        "firstName": "Saad",
-        "lastName": "Hasan",
-        "avatar": "avatar-1708764856675-623317122.jpg"
-      },
-      "tags": "android, java, kotlin, permission",
-      "likes": [
-        {
-          "id": "346d7a36b3c41f3fbfa2"
-        },
-        {
-          "id": "27b571afacadacd60fb5"
-        }
-      ],
-      "comments": [],
-      "createdAt": "2024-02-24T09:01:37.581Z",
-      "isFavourite": false
-    },
-    {
-      "id": "4321b782f360f58c8c88",
-      "title": "JSON Parse | Android | Java",
-      "content": "JSON stands for JavaScript Object Notation. It is structured, lightweight, human-readable and easy to parse. It’s the best alternative to XML when our android app needs to interchange data from the server. XML parsing is very complex as compare to JSON parsing. First, We have to understand how JSON works. JSON contains Objects, Arrays and key and value. An object is represented by Curly Braces: “{}”, Array is represented by Square Brackets: “[]” Everything between curly braces :{} is called JSON Object & everything between square brackets : [] is a JSON Object. A JSON object can contain different key-value pairs. The value of a key can be an Array. And Array may contain different Objects. And Multiple objects are separated by a comma. Seems difficult?\n\nNo, It’s not. See the Sample JSON file which will help you to understand it by your own and we will use this to fetch data. This JSON file is hosted on https://api.myjson.com/bins/xcuq8",
-      "thumbnail": "thumbnail-4321b782f360f58c8c86.webp",
-      "author": {
-        "id": "3d2dde4b6548275fb066",
-        "firstName": "Saad",
-        "lastName": "Hasan",
-        "avatar": "avatar-1708764856675-623317122.jpg"
-      },
-      "tags": "android, java, kotlin, permission",
-      "likes": [
-        {
-          "id": "346d7a36b3c41f3fbfa2"
-        }
-      ],
-      "comments": [
-        {
-          "id": "e0ec1593746d518d0d36",
-          "content": "Nice blog",
-          "author": {
-            "id": "27b571afacadacd60fb5",
-            "firstName": "Shykat",
-            "lastName": "Raha",
-            "avatar": "avatar-1709630866412-891143567.jpg"
-          }
-        }
-      ],
-      "createdAt": "2024-02-24T09:01:37.581Z",
-      "isFavourite": false
-    },
-    {
-      "id": "4321b782f360f58c8c86",
-      "title": "এন্ড্রয়েড পার্মিশন",
-      "content": "এন্ড্রয়েড ইউজারদের ললিপপ খাওয়ানোর পাশাপাশি তাদের নিরপত্তার বিষয়টি নিশ্চিত করতে ললিপপ ভার্সন থেকে রান টাইম পার্মিশন নামক একটি অদ্ভুত বস্তু গুগল তাদের খাতায় যোগ করেছে । যেখানে, কোনো এপ ডেভেলোপার যদি তার এপ ইউজারের Storage, Camera, Contacts, Locationঅথবা Microphone সহ অন্যান্য যেকোনো গুরুত্বপূর্ণ এরিয়াতে হাত দিতে চাইলে অবশ্যই ইউজার কতৃক পারমিশন নিয়ে তারপরেই হাতা হাতি করতে হবে । আমার মনে হয় গুগল বাংলাদেশের কথা ভেবেই এই বস্তুটি তাদের খাতায় যুক্ত করেছেন । কারণ, আমরা (৯০% মানুষ) আল্লাহর ওয়াস্তে আমাদের এপ কি কি পার্মিশন নিচ্ছে অথবা Terms & Condition এ কি লেখা আছে সেট না পড়েই সব কিছু তে Allow করে দেই (আমিও এর ব্যাতিক্রম নই 🤓 )। যেটা অনেকটা ঝুকিপূর্ণ, কারণ আমাদের কিছু ভাই রয়েছে (হ্যাকার) যারা RAT বা ট্রজান হর্স দিয়ে খুব সুন্দর করে ভিকটিমের ডেটা নিজের মনে করে চুরি করে নিতে পারে । তা আমি সে বিষয়ে কিছু না বলে আমরা এখানে দেখবো কিভাবে আমরা রানটাইম ইউজারের কাছে পার্মিশন নিতে পারবো । 😁 \n আগের ভার্সন গুলোর মতই আমাদের আগেই AndroidManifest.xml এ পার্মিশন গুলো উল্লেখ করে নিতে হবে",
-      "thumbnail": "thumbnail-1708765297564-606798153.png",
-      "author": {
-        "id": "3d2dde4b6548275fb066",
-        "firstName": "Saad",
-        "lastName": "Hasan",
-        "avatar": "avatar-1708764856675-623317122.jpg"
-      },
-      "tags": "android, java, kotlin, permission",
-      "likes": [
-        {
-          "id": "346d7a36b3c41f3fbfa2"
         }
       ],
       "comments": [
@@ -287,59 +146,6 @@
       ],
       "createdAt": "2024-02-24T09:01:37.581Z",
       "isFavourite": false
-    },
-    {
-      "id": "4321b782f360f58c8c89",
-      "title": "React useMemo Hook",
-      "content": "useMemo is used to memoize the result of a function, meaning it caches the result and returns it when the inputs to that function haven't changed since the last render. It takes two arguments: the function to memoize and an array of dependencies. If any of the dependencies change between renders, the memoized function is re-executed; otherwise, the cached result is returned.",
-      "thumbnail": "thumbnail-4321b782f360f58c8c89.avif",
-      "author": {
-        "id": "3d2dde4b6548275fb066",
-        "firstName": "Saad",
-        "lastName": "Hasan",
-        "avatar": "avatar-1708764856675-623317122.jpg"
-      },
-      "tags": "android, java, kotlin, permission",
-      "likes": [
-        {
-          "id": "346d7a36b3c41f3fbfa2"
-        }
-      ],
-      "comments": [],
-      "createdAt": "2024-02-24T09:01:37.581Z",
-      "isFavourite": false
-    },
-    {
-      "id": "9d5598ab44600a379103",
-      "title": "Dev Retro 2022: What made me a better developer this year?",
-      "content": "Writing about the Dev Retro 2022 will be a bit off track if I do not discuss the journey briefly before it, which shaped my career as a blogger. The year 2021 was about writing. Writing here on my blog, freeCodeCamp, CSS-Tricks, Dev, and many other platforms.\n\nAt the end of 2021, I could establish myself as a technology blogger on the prominent platforms mentioned. The most exciting fact was that I was one of the top contributors/most-read authors on all these platforms.\n\nWhile these achievements were immense, I was still wondering about doing something else, trying something different in 2022. To be honest, I was trying to put myself out of my comfort zone, banking on all experiences I've gained over the years.\n\nThis article captures my journey of becoming a better developer this year. I hope it inspires you somehow, and if it does, I'll appreciate you leaving a comment. Also, for some of you who are part of this journey, I want to thank you from the bottom of my heart ❤️.",
-      "thumbnail": "thumbnail-1708793859418-241650391.png",
-      "author": {
-        "id": "346d7a36b3c41f3fbfa2",
-        "firstName": "Tapas",
-        "lastName": "Adhikary",
-        "avatar": "avatar-1708764766479-243448656.png"
-      },
-      "tags": "programming, algorithm, prototype, javascript",
-      "likes": [
-        {
-          "id": "346d7a36b3c41f3fbfa2"
-        }
-      ],
-      "comments": [
-        {
-          "id": "eb0b9e7796f29a437c49",
-          "content": "hi Tapas Dada ",
-          "author": {
-            "id": "27b571afacadacd60fb5",
-            "firstName": "Shykat",
-            "lastName": "Raha",
-            "avatar": "avatar-1709630866412-891143567.jpg"
-          }
-        }
-      ],
-      "createdAt": "2024-02-24T16:57:39.425Z",
-      "isFavourite": true
     },
     {
       "id": "6c33b31ecaa2b8917db2",
@@ -355,8 +161,23 @@
       "tags": "programming, algorithm",
       "likes": [],
       "comments": [],
-      "createdAt": "2024-02-24T09:04:21.871Z",
-      "isFavourite": false
+      "createdAt": "2024-02-24T09:04:21.871Z"
+    },
+    {
+      "id": "9d5598ab44600a379103",
+      "title": "Dev Retro 2022: What made me a better developer this year?",
+      "content": "Writing about the Dev Retro 2022 will be a bit off track if I do not discuss the journey briefly before it, which shaped my career as a blogger. The year 2021 was about writing. Writing here on my blog, freeCodeCamp, CSS-Tricks, Dev, and many other platforms.\n\nAt the end of 2021, I could establish myself as a technology blogger on the prominent platforms mentioned. The most exciting fact was that I was one of the top contributors/most-read authors on all these platforms.\n\nWhile these achievements were immense, I was still wondering about doing something else, trying something different in 2022. To be honest, I was trying to put myself out of my comfort zone, banking on all experiences I've gained over the years.\n\nThis article captures my journey of becoming a better developer this year. I hope it inspires you somehow, and if it does, I'll appreciate you leaving a comment. Also, for some of you who are part of this journey, I want to thank you from the bottom of my heart ❤️.",
+      "thumbnail": "thumbnail-1708793859418-241650391.png",
+      "author": {
+        "id": "346d7a36b3c41f3fbfa2",
+        "firstName": "Tapas",
+        "lastName": "Adhikary",
+        "avatar": "avatar-1708764766479-243448656.png"
+      },
+      "tags": "programming, algorithm, prototype, javascript",
+      "likes": [],
+      "comments": [],
+      "createdAt": "2024-02-24T16:57:39.425Z"
     },
     {
       "id": "965584a7b281d9f99c14",
@@ -391,21 +212,99 @@
       "createdAt": "2024-02-24T17:06:43.629Z"
     },
     {
-      "id": "7cbc7f039a7111d38e77",
-      "title": "Node.js back-end debugging process",
-      "content": "Node.js Debugging Tools\nNode.js provides a range of debugging tools and techniques to debug back-end applications. Here are some of the popular ones:\n\n1. Console.log()\nConsole.log() is one of the most basic and widely used debugging techniques in Node.js. It is a simple function that logs messages to the console, which can be used to trace the execution flow and identify bugs. For example:\n\n2. Debugger Statement\nDebugger statement is a built-in Node.js debugger that stops the execution of code at a specific point and allows you to inspect variables, call stack, and execute code line by line. For example:3. Node.js Debug Module\nThe Node.js debug module is a powerful tool that provides a range of debugging options, including:\n\nBreakpoints\nConditional breakpoints\nWatch expressions\nStepping over, into, and out of functions\nHere is an example of how to use the debug module:\n\n3. Node.js Debug Module\nThe Node.js debug module is a powerful tool that provides a range of debugging options, including:\n\nBreakpoints\nConditional breakpoints\nWatch expressions\nStepping over, into, and out of functions\nHere is an example of how to use the debug module:\n\n",
-      "thumbnail": null,
+      "id": "4321b782f360f58c8c86",
+      "title": "এন্ড্রয়েড পার্মিশন",
+      "content": "এন্ড্রয়েড ইউজারদের ললিপপ খাওয়ানোর পাশাপাশি তাদের নিরপত্তার বিষয়টি নিশ্চিত করতে ললিপপ ভার্সন থেকে রান টাইম পার্মিশন নামক একটি অদ্ভুত বস্তু গুগল তাদের খাতায় যোগ করেছে । যেখানে, কোনো এপ ডেভেলোপার যদি তার এপ ইউজারের Storage, Camera, Contacts, Locationঅথবা Microphone সহ অন্যান্য যেকোনো গুরুত্বপূর্ণ এরিয়াতে হাত দিতে চাইলে অবশ্যই ইউজার কতৃক পারমিশন নিয়ে তারপরেই হাতা হাতি করতে হবে । আমার মনে হয় গুগল বাংলাদেশের কথা ভেবেই এই বস্তুটি তাদের খাতায় যুক্ত করেছেন । কারণ, আমরা (৯০% মানুষ) আল্লাহর ওয়াস্তে আমাদের এপ কি কি পার্মিশন নিচ্ছে অথবা Terms & Condition এ কি লেখা আছে সেট না পড়েই সব কিছু তে Allow করে দেই (আমিও এর ব্যাতিক্রম নই 🤓 )। যেটা অনেকটা ঝুকিপূর্ণ, কারণ আমাদের কিছু ভাই রয়েছে (হ্যাকার) যারা RAT বা ট্রজান হর্স দিয়ে খুব সুন্দর করে ভিকটিমের ডেটা নিজের মনে করে চুরি করে নিতে পারে । তা আমি সে বিষয়ে কিছু না বলে আমরা এখানে দেখবো কিভাবে আমরা রানটাইম ইউজারের কাছে পার্মিশন নিতে পারবো । 😁 \n আগের ভার্সন গুলোর মতই আমাদের আগেই AndroidManifest.xml এ পার্মিশন গুলো উল্লেখ করে নিতে হবে",
+      "thumbnail": "thumbnail-1708765297564-606798153.png",
       "author": {
-        "id": "27b571afacadacd60fb5",
-        "firstName": "Shykat",
-        "lastName": "Raha",
-        "avatar": "avatar-1709630866412-891143567.jpg"
+        "id": "3d2dde4b6548275fb066",
+        "firstName": "Saad",
+        "lastName": "Hasan",
+        "avatar": "avatar-1708764856675-623317122.jpg"
       },
-      "tags": "programming, algorithm, prototype, javascript",
-      "likes": [],
+      "tags": "android, java, kotlin, permission",
+      "likes": [
+        {
+          "id": "346d7a36b3c41f3fbfa2"
+        }
+      ],
+      "comments": [
+        {
+          "id": "19becccf4ebf3e6cf385",
+          "content": "অনেক সুন্দর হয়েছে",
+          "author": {
+            "id": "346d7a36b3c41f3fbfa2",
+            "firstName": "Tapas",
+            "lastName": "Adhikary",
+            "avatar": "avatar-1708764766479-243448656.png"
+          }
+        }
+      ],
+      "createdAt": "2024-02-24T09:01:37.581Z",
+      "isFavourite": false
+    },
+    {
+      "id": "4321b782f360f58c8c87",
+      "title": "Create Custom Dialog with listview | Android | Java",
+      "content": "Often we might need to create a custom dialog with listview to choose different kinds of actions for a particular option. In certain cases, we use such type of menu items for menus. So, In this post, I will show you how you can create this Custom Dialog with Listview :",
+      "thumbnail": "thumbnail-1708765297564-606798153.png",
+      "author": {
+        "id": "3d2dde4b6548275fb066",
+        "firstName": "Saad",
+        "lastName": "Hasan",
+        "avatar": "avatar-1708764856675-623317122.jpg"
+      },
+      "tags": "android, java, kotlin, permission",
+      "likes": [
+        {
+          "id": "346d7a36b3c41f3fbfa2"
+        }
+      ],
       "comments": [],
-      "createdAt": "2024-03-06T14:17:00.201Z",
-      "isFavourite": true
+      "createdAt": "2024-02-24T09:01:37.581Z",
+      "isFavourite": false
+    },
+    {
+      "id": "4321b782f360f58c8c88",
+      "title": "JSON Parse | Android | Java",
+      "content": "JSON stands for JavaScript Object Notation. It is structured, lightweight, human-readable and easy to parse. It’s the best alternative to XML when our android app needs to interchange data from the server. XML parsing is very complex as compare to JSON parsing. First, We have to understand how JSON works. JSON contains Objects, Arrays and key and value. An object is represented by Curly Braces: “{}”, Array is represented by Square Brackets: “[]” Everything between curly braces :{} is called JSON Object & everything between square brackets : [] is a JSON Object. A JSON object can contain different key-value pairs. The value of a key can be an Array. And Array may contain different Objects. And Multiple objects are separated by a comma. Seems difficult?\n\nNo, It’s not. See the Sample JSON file which will help you to understand it by your own and we will use this to fetch data. This JSON file is hosted on https://api.myjson.com/bins/xcuq8",
+      "thumbnail": "thumbnail-4321b782f360f58c8c86.webp",
+      "author": {
+        "id": "3d2dde4b6548275fb066",
+        "firstName": "Saad",
+        "lastName": "Hasan",
+        "avatar": "avatar-1708764856675-623317122.jpg"
+      },
+      "tags": "android, java, kotlin, permission",
+      "likes": [
+        {
+          "id": "346d7a36b3c41f3fbfa2"
+        }
+      ],
+      "comments": [],
+      "createdAt": "2024-02-24T09:01:37.581Z",
+      "isFavourite": false
+    },
+    {
+      "id": "4321b782f360f58c8c89",
+      "title": "React useMemo Hook",
+      "content": "useMemo is used to memoize the result of a function, meaning it caches the result and returns it when the inputs to that function haven't changed since the last render. It takes two arguments: the function to memoize and an array of dependencies. If any of the dependencies change between renders, the memoized function is re-executed; otherwise, the cached result is returned.",
+      "thumbnail": "thumbnail-4321b782f360f58c8c89.avif",
+      "author": {
+        "id": "3d2dde4b6548275fb066",
+        "firstName": "Saad",
+        "lastName": "Hasan",
+        "avatar": "avatar-1708764856675-623317122.jpg"
+      },
+      "tags": "android, java, kotlin, permission",
+      "likes": [
+        {
+          "id": "346d7a36b3c41f3fbfa2"
+        }
+      ],
+      "comments": [],
+      "createdAt": "2024-02-24T09:01:37.581Z",
+      "isFavourite": false
     }
   ]
 }

@@ -7,21 +7,13 @@ const jwt = require("jsonwebtoken");
  * @returns {Object} - An object containing the generated token and refresh token.
  */
 const getNewTokens = (user) => {
-  const token = jwt.sign(
-    { id: user.id, email: user.email, type: "access" },
-    process.env.SECRET_KEY,
-    {
-      expiresIn: 60000,
-    }
-  );
+  const token = jwt.sign({ id: user.id, email: user.email, type: "access" }, process.env.SECRET_KEY, {
+    expiresIn: process.env.JWT_EXPIRES_IN,
+  });
 
-  const refreshToken = jwt.sign(
-    { id: user.id, email: user.email, type: "refresh" },
-    process.env.REFRESH_SECRET_KEY,
-    {
-      expiresIn: process.env.REFRESH_JWT_EXPIRES_IN,
-    }
-  );
+  const refreshToken = jwt.sign({ id: user.id, email: user.email, type: "refresh" }, process.env.REFRESH_SECRET_KEY, {
+    expiresIn: process.env.REFRESH_JWT_EXPIRES_IN,
+  });
 
   return { accessToken: token, refreshToken };
 };

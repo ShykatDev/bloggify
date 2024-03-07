@@ -4,9 +4,11 @@ import BlogComments from "../components/blog/BlogComments";
 import FloatingIcons from "../components/blog/FloatingIcons";
 import { useEffect, useState } from "react";
 import { useAxios } from "../hooks/useAxios";
+import SingleBlogLoading from "../components/loading/SingleBlogLoading";
 
 const SingleBlog = () => {
   const [blog, setBlog] = useState();
+  const [isLoading, setIsLoading] = useState(false);
   const { api } = useAxios();
   const [comments, setComments] = useState([]);
   const [likes, setLikes] = useState([]);
@@ -14,6 +16,7 @@ const SingleBlog = () => {
   const { blogId } = useParams();
 
   useEffect(() => {
+    setIsLoading(true);
     const fetchBlogDetails = async () => {
       try {
         const response = await api.get(
@@ -26,22 +29,34 @@ const SingleBlog = () => {
         }
       } catch (err) {
         console.log(err);
+      } finally {
+        setIsLoading(false);
       }
     };
 
     fetchBlogDetails();
-  }, [blogId]);
+  }, [api, blogId]);
 
   return (
     <main>
-      <BlogInfo blog={blog} />
-      <BlogComments blog={blog} comments={comments} setComments={setComments} />
-      <FloatingIcons
-        blog={blog}
-        comments={comments}
-        likes={likes}
-        setLikes={setLikes}
-      />
+      {isLoading ? (
+        <SingleBlogLoading />
+      ) : (
+        <>
+          <BlogInfo blog={blog} />
+          <BlogComments
+            blog={blog}
+            comments={comments}
+            setComments={setComments}
+          />
+          <FloatingIcons
+            blog={blog}
+            comments={comments}
+            likes={likes}
+            setLikes={setLikes}
+          />
+        </>
+      )}
     </main>
   );
 };
