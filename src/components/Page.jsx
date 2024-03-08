@@ -12,6 +12,7 @@ import { useAuth } from "../hooks/useAuth";
 import CreateBlog from "../pages/CreateBlog";
 import Footer from "./common/Footer";
 import ScrollToTop from "./common/ScrollToTop";
+import EditBlog from "../pages/EditBlog";
 
 const Page = () => {
   const { state } = useAuthor();
@@ -26,6 +27,7 @@ const Page = () => {
         <Route element={<PrivateRoute />}>
           <Route path="/profile" element={<ProfilePage />} />
           <Route path="/create-blog" element={<CreateBlog />} />
+          <Route path="/edit-blog/:blogId" element={<EditBlog />} />
         </Route>
         <Route path="/" element={<Homepage />} exact />
         <Route

@@ -6,10 +6,14 @@ import { getDummyImage } from "../../utils";
 import { useProfile } from "../../hooks/useProfile";
 import { actions } from "../../actions";
 import { toast } from "react-toastify";
+import { useState } from "react";
+import SearchContainer from "../search/SearchContainer";
+import Portal from "./Portal";
 
 const Navbar = () => {
   const { auth, setAuth } = useAuth();
   const { state, dispatch } = useProfile();
+  const [search, setSearch] = useState(false);
 
   const user = state?.user ?? auth?.user;
   const navigate = useNavigate();
@@ -44,10 +48,13 @@ const Navbar = () => {
             </li>
             {user && (
               <li>
-                <Link to="/" className="flex items-center gap-2 cursor-pointer">
+                <button
+                  onClick={() => setSearch(true)}
+                  className="flex items-center gap-2 cursor-pointer"
+                >
                   <img src={searchIcon} alt="Search" />
                   <span>Search</span>
-                </Link>
+                </button>
               </li>
             )}
             <li>
@@ -94,6 +101,12 @@ const Navbar = () => {
           </ul>
         </div>
       </nav>
+
+      {search && (
+        <Portal>
+          <SearchContainer setSearch={setSearch} />
+        </Portal>
+      )}
     </header>
   );
 };

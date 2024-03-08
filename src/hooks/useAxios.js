@@ -26,9 +26,10 @@ export const useAxios = () => {
         return response;
       },
       async (error) => {
+        console.log(error);
         const originalRequest = error.config;
         console.log(originalRequest);
-        if (error.response.status === 500 && !originalRequest._retry) {
+        if (error.response.status === 403 && !originalRequest._retry) {
           originalRequest._retry = true;
 
           try {

@@ -13,8 +13,6 @@ const ProfileBio = () => {
   const textAreaRef = useRef(null);
   const { api } = useAxios();
 
-  console.log(state);
-
   const handleBioChange = async () => {
     try {
       const response = await api.patch(

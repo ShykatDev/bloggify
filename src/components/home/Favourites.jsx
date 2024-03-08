@@ -29,7 +29,7 @@ const Favourites = () => {
   return (
     <div className="sidebar-card">
       <h3 className="text-slate-300 text-xl lg:text-2xl font-semibold">
-        Your Favourites <i className="text-indigo-600">{favourites.length}</i>❤️
+        Your Favourites ❤️
       </h3>
 
       {favourites.length === 0 ? (
@@ -45,7 +45,7 @@ const Favourites = () => {
                 <h3 className="text-slate-400 font-medium hover:text-slate-300 transition-all cursor-pointer">
                   {fav?.title}
                 </h3>
-                <p className="text-slate-600 text-sm flex gap-1">
+                <p className="text-slate-600 text-sm flex flex-wrap gap-1">
                   {favTags?.map((tag, i) => {
                     return (
                       <span key={i}>

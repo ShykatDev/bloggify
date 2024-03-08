@@ -47,7 +47,7 @@ const Comment = ({ blog, comment, setComments }) => {
         <div className="size-8 rounded-full flex items-center">
           <img
             src={`${import.meta.env.VITE_SERVER_BASE_URL}/uploads/avatar/${
-              comment?.author?.avatar
+              loginUser ? auth?.user?.avatar : comment?.author?.avatar
             }`}
             alt={`${comment?.author?.firstName} ${comment?.author?.lastName}`}
             className="w-full h-full rounded-full"

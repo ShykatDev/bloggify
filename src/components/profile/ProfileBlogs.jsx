@@ -4,8 +4,6 @@ import BlogsList from "./BlogsList";
 
 const ProfileBlogs = () => {
   const { state } = useProfile();
-
-  console.log(state?.user);
   return (
     <>
       {state?.user?.blogs?.length === 0 ? (

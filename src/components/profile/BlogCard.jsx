@@ -3,6 +3,7 @@ import { useProfile } from "../../hooks/useProfile";
 import BlogAction from "./BlogAction";
 import { useAuth } from "../../hooks/useAuth";
 import { useFetchProfile } from "../../hooks/useFetchProfile";
+import { getDummyImage } from "../../utils";
 
 const BlogCard = ({ blog }) => {
   const { title, content, author, likes, thumbnail } = blog;
@@ -45,6 +46,14 @@ const BlogCard = ({ blog }) => {
               />
             )}
 
+            {user?.avatar === null && (
+              <div className="flex items-center">
+                <div className="avater-img bg-indigo-700 ring-2 ring-indigo-400 text-white">
+                  <span className="">{getDummyImage(user)}</span>
+                </div>
+              </div>
+            )}
+
             <div>
               <h5
                 onClick={fetchProfile}
@@ -62,7 +71,7 @@ const BlogCard = ({ blog }) => {
             <span>{likes?.length} Likes</span>
           </div>
         </div>
-        {loginUser && <BlogAction />}
+        {loginUser && <BlogAction blogId={blog?.id} />}
       </div>
     </div>
   );

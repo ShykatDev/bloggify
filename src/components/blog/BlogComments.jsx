@@ -41,13 +41,12 @@ const BlogComments = ({ blog, comments, setComments }) => {
         </h2>
 
         {loginUser ? (
-          <div className="flex items -center space-x-4">
+          <div className="flex items-start  space-x-4">
             {loginUser?.avatar === null && (
               <div className="flex items-center">
                 <div className="avater-img bg-indigo-700 ring-2 ring-indigo-400 text-white">
                   <span className="">{getDummyImage(loginUser)}</span>
                 </div>
-                <span className="text-white ml-2">{loginUser?.firstName}</span>
               </div>
             )}
             {loginUser?.avatar !== null && (

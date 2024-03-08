@@ -41,7 +41,6 @@ const BlogInfo = ({ blog }) => {
                 <div className="avater-img bg-indigo-700 ring-2 ring-indigo-400 text-white">
                   <span className="">{getDummyImage(user)}</span>
                 </div>
-                <span className="text-white ml-2">{user?.firstName}</span>
               </div>
             )}
             {user?.avatar !== null && (

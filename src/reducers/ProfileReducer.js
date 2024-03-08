@@ -50,6 +50,17 @@ const postReducer = (state, action) => {
       };
     }
 
+    case actions.profile.BLOG_DELETED: {
+      return {
+        ...state,
+        loading: false,
+        user: {
+          ...state.user,
+          blogs: state.user.blogs.filter((blog) => blog.id !== action.data),
+        },
+      };
+    }
+
     case actions.profile.LOGOUT_DATA: {
       return {
         ...state,
