@@ -1,17 +1,17 @@
 import { useState } from "react";
-import { useAuth } from "../../hooks/useAuth";
 import { useProfile } from "../../hooks/useProfile";
 import { getDummyImage } from "../../utils";
 import Comment from "./Comment";
 import { useAxios } from "../../hooks/useAxios";
 import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
+import { useToken } from "../../hooks/useToken";
 
 const BlogComments = ({ blog, comments, setComments }) => {
   const [content, setContent] = useState("");
 
   const { state } = useProfile();
-  const { auth } = useAuth();
+  const { locValue: auth } = useToken();
   const { api } = useAxios();
   const loginUser = state?.user ?? auth?.user;
 

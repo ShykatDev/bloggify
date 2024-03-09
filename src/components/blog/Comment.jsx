@@ -1,7 +1,7 @@
 import { getDummyImage } from "../../utils";
 import delIcon from "../../assets/icons/delete.svg";
-import { useAuth } from "../../hooks/useAuth";
 import { useAxios } from "../../hooks/useAxios";
+import { useToken } from "../../hooks/useToken";
 
 const Comment = ({ blog, comment, setComments }) => {
   const bgColor = [
@@ -13,7 +13,7 @@ const Comment = ({ blog, comment, setComments }) => {
     "bg-red-600",
     "bg-lime-600",
   ];
-  const { auth } = useAuth();
+  const { locValue: auth } = useToken();
   const { api } = useAxios();
   const loginUser = auth?.user?.id === comment?.author?.id;
 

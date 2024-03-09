@@ -1,14 +1,15 @@
 import { useEffect } from "react";
-import { useAuth } from "../hooks/useAuth";
 import { useAxios } from "../hooks/useAxios";
 import { useProfile } from "../hooks/useProfile";
 import ProfileContainer from "../components/profile/ProfileContainer";
 import { actions } from "../actions";
 import Loading from "../components/common/Loading";
 import Error from "../components/common/Error";
+import { useToken } from "../hooks/useToken";
 
 const ProfilePage = () => {
-  const { auth } = useAuth();
+  const { locValue: auth } = useToken();
+
   const { api } = useAxios();
   const { state, dispatch } = useProfile();
 

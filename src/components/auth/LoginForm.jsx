@@ -2,8 +2,8 @@ import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import InpField from "../common/InpField";
 import axios from "axios";
-import { useAuth } from "../../hooks/useAuth";
 import { toast } from "react-toastify";
+import { useToken } from "../../hooks/useToken";
 
 const LoginForm = () => {
   const {
@@ -13,7 +13,7 @@ const LoginForm = () => {
     setError,
   } = useForm();
 
-  const { setAuth } = useAuth();
+  const { addLocal } = useToken();
   const navigate = useNavigate();
 
   const submitForm = async (formData) => {
@@ -30,9 +30,7 @@ const LoginForm = () => {
           const accessToken = token.accessToken;
           const refreshToken = token.refreshToken;
 
-          console.log(`login time auth token: ${accessToken}`);
-
-          setAuth({ user, accessToken, refreshToken });
+          addLocal({ user, accessToken, refreshToken });
 
           toast.success("Login Success");
           navigate("/");

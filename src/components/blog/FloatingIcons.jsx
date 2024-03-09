@@ -3,14 +3,14 @@ import likedFillIcon from "../../assets/icons/like-fill.svg";
 import heartIcon from "../../assets/icons/heart.svg";
 import heartFillIcon from "../../assets/icons/heart-filled.svg";
 import commentIcon from "../../assets/icons/comment.svg";
-import { useAuth } from "../../hooks/useAuth";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import { useAxios } from "../../hooks/useAxios";
 import { useEffect, useState } from "react";
+import { useToken } from "../../hooks/useToken";
 
 const FloatingIcons = ({ blog, comments, likes, setLikes }) => {
-  const { auth } = useAuth();
+  const { locValue: auth } = useToken();
   const navigate = useNavigate();
   const { api } = useAxios();
 

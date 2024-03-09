@@ -1,11 +1,11 @@
 import { Navigate, Outlet } from "react-router-dom";
-import { useAuth } from "../../hooks/useAuth";
+import { useToken } from "../../hooks/useToken";
 
 const PrivateRoute = () => {
-  const { auth } = useAuth();
+  const { locValue } = useToken();
   return (
     <>
-      {auth?.accessToken ? (
+      {locValue.accessToken ? (
         <>
           <Outlet />
         </>

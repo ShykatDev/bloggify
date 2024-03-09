@@ -8,17 +8,21 @@ import ProfilePage from "../pages/ProfilePage";
 import SingleBlog from "../pages/SingleBlog";
 import AuthorPage from "../pages/AuthorPage";
 import { useAuthor } from "../hooks/useAuthor";
-import { useAuth } from "../hooks/useAuth";
 import CreateBlog from "../pages/CreateBlog";
 import Footer from "./common/Footer";
 import ScrollToTop from "./common/ScrollToTop";
 import EditBlog from "../pages/EditBlog";
+import { useToken } from "../hooks/useToken";
 
 const Page = () => {
   const { state } = useAuthor();
-  const { auth } = useAuth();
+  const { locValue } = useToken();
 
-  const isLoginUser = state?.author?.id === auth?.user?.id;
+  let isLoginUser = false;
+  if (Object.keys(locValue).length > 0) {
+    isLoginUser = state?.author?.id === locValue?.user?.id;
+  }
+
   return (
     <>
       <Navbar />
@@ -31,7 +35,7 @@ const Page = () => {
         </Route>
         <Route path="/" element={<Homepage />} exact />
         <Route
-          path="/author"
+          path="/author/:authorId"
           element={isLoginUser ? <Navigate to="/profile" /> : <AuthorPage />}
         />
         <Route path="/blogs/:blogId" element={<SingleBlog />} />

@@ -1,34 +1,12 @@
 import DOMPurify from "dompurify";
 import { getDummyImage } from "../../utils";
-import { useAuthor } from "../../hooks/useAuthor";
-import { actions } from "../../actions";
-import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useFetchProfile } from "../../hooks/useFetchProfile";
 
 const BlogInfo = ({ blog }) => {
   const blogTags = blog?.tags?.split(",");
   const user = blog?.author;
-  const { dispatch } = useAuthor();
-  const navigate = useNavigate();
 
-  const fetchProfile = async () => {
-    dispatch({ type: actions.author.DATA_FETCHING });
-    try {
-      const response = await axios.get(
-        `${import.meta.env.VITE_SERVER_BASE_URL}/profile/${blog?.author?.id}`
-      );
-
-      if (response.status === 200) {
-        dispatch({ type: actions.author.DATA_FETCHED, data: response.data });
-        navigate("/author");
-      }
-    } catch (err) {
-      dispatch({
-        type: actions.author.DATA_FETCHED_ERROR,
-        error: err.message,
-      });
-    }
-  };
+  const { fetchProfile } = useFetchProfile(user);
 
   return (
     <section>

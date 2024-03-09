@@ -7,7 +7,7 @@ const ProfileContainer = () => {
   const { state } = useProfile();
   return (
     <>
-      <main className="mx-auto max-w-[1020px] py-8">
+      <main className="mx-auto max-w-[1020px] min-h-[75vh] py-8">
         <div className="container">
           <div className="flex flex-col items-center py-8 text-center">
             <ProfileImage />

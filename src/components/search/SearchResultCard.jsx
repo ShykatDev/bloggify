@@ -1,10 +1,11 @@
 import { useNavigate } from "react-router-dom";
 
-const SearchResultCard = ({ result }) => {
+const SearchResultCard = ({ result, setSearch }) => {
   const navigate = useNavigate();
 
   const viewBlog = () => {
     navigate(`/blogs/${result?.id}`);
+    setSearch(false);
   };
 
   return (

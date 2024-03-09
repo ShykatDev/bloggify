@@ -1,14 +1,15 @@
 import { useNavigate } from "react-router-dom";
 import { useProfile } from "../../hooks/useProfile";
 import BlogAction from "./BlogAction";
-import { useAuth } from "../../hooks/useAuth";
 import { useFetchProfile } from "../../hooks/useFetchProfile";
 import { getDummyImage } from "../../utils";
+import { useToken } from "../../hooks/useToken";
 
 const BlogCard = ({ blog }) => {
   const { title, content, author, likes, thumbnail } = blog;
   const { state } = useProfile();
-  const { auth } = useAuth();
+  const { locValue: auth } = useToken();
+
   const navigate = useNavigate();
   const { fetchProfile } = useFetchProfile(author);
 

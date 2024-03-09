@@ -1,7 +1,7 @@
 import { createContext } from "react";
 
-const AuthContext = createContext();
 const ProfileContext = createContext();
 const AuthorContext = createContext();
+const LocalStorageContext = createContext();
 
-export { AuthContext, ProfileContext, AuthorContext };
+export { ProfileContext, AuthorContext, LocalStorageContext };

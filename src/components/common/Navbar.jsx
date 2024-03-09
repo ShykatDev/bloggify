@@ -1,7 +1,6 @@
 import LWSlogo from "../../assets/logo.svg";
 import searchIcon from "../../assets/icons/search.svg";
 import { Link, useNavigate } from "react-router-dom";
-import { useAuth } from "../../hooks/useAuth";
 import { getDummyImage } from "../../utils";
 import { useProfile } from "../../hooks/useProfile";
 import { actions } from "../../actions";
@@ -9,9 +8,10 @@ import { toast } from "react-toastify";
 import { useState } from "react";
 import SearchContainer from "../search/SearchContainer";
 import Portal from "./Portal";
+import { useToken } from "../../hooks/useToken";
 
 const Navbar = () => {
-  const { auth, setAuth } = useAuth();
+  const { locValue: auth, removeLocal } = useToken();
   const { state, dispatch } = useProfile();
   const [search, setSearch] = useState(false);
 
@@ -19,10 +19,10 @@ const Navbar = () => {
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    setAuth(null);
     dispatch({ type: actions.profile.LOGOUT_DATA });
     navigate("/login");
     toast.success("Logout Successful");
+    removeLocal();
   };
 
   return (
@@ -39,7 +39,8 @@ const Navbar = () => {
               <Link
                 to="/create-blog"
                 onClick={() =>
-                  auth === null && toast.warning("Please login first")
+                  Object.keys(auth).length === 0 &&
+                  toast.warning("Please login first")
                 }
                 className="bg-indigo-600 text-white px-6 py-2 md:py-3 rounded-md hover:bg-indigo-700 transition-all duration-200"
               >
@@ -85,7 +86,7 @@ const Navbar = () => {
                 </div>
               )}
               {/* user with image */}
-              {auth !== null && user?.avatar !== null && (
+              {Object.keys(auth).length > 0 && user?.avatar !== null && (
                 <div className="size-8 rounded-full ring-2 ring-indigo-400 flex items-center">
                   <img
                     src={`${

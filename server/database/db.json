@@ -18,7 +18,13 @@
       "avatar": "avatar-1709829747698-240283519.jpg",
       "bio": "Creating content is my passion. After spending over a decade in software engineering, I'm on a mission to make learning easy, and practical. I create written and video content on JavaScript, Web Development, Full Stack, and Career development.",
       "password": "$2b$08$p15BeTInMoszGTNI3gtwNu2XiSadWVdPXaxQPQy8XZd1jj/6yPQae",
-      "favourites": []
+      "favourites": [
+        {
+          "id": "9d5598ab44600a379103",
+          "title": "Dev Retro 2022: What made me a better developer this year?",
+          "tags": "programming, algorithm, prototype, javascript"
+        }
+      ]
     },
     {
       "id": "f810ae24754a6cdc6d01",
@@ -61,7 +67,7 @@
       "email": "shykat@email.com",
       "firstName": "Shykat",
       "lastName": "Raha",
-      "avatar": null,
+      "avatar": "avatar-1709989259786-290853110.jpg",
       "bio": "",
       "password": "$2b$08$NK3lL.CaxDMC.hNrd9Gi.OWpTfTybDI4Zo.Cc.wCOFxJPljUS4DTi",
       "favourites": []
@@ -286,7 +292,8 @@
       "tags": "programming, algorithm, prototype, javascript",
       "likes": [],
       "comments": [],
-      "createdAt": "2024-02-24T16:57:39.425Z"
+      "createdAt": "2024-02-24T16:57:39.425Z",
+      "isFavourite": false
     },
     {
       "id": "965584a7b281d9f99c14",
@@ -302,7 +309,8 @@
       "tags": "programming, algorithm, prototype, javascript",
       "likes": [],
       "comments": [],
-      "createdAt": "2024-02-24T16:59:13.363Z"
+      "createdAt": "2024-02-24T16:59:13.363Z",
+      "isFavourite": true
     },
     {
       "id": "210470a416ea45b625b8",

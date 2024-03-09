@@ -1,15 +1,15 @@
 import { useEffect } from "react";
 import api from "../api";
-import { useAuth } from "./useAuth";
 import axios from "axios";
+import { useToken } from "./useToken";
 
 export const useAxios = () => {
-  const { auth, setAuth } = useAuth();
+  const { locValue, refresh } = useToken();
 
   useEffect(() => {
     const requestInterceptor = api.interceptors.request.use(
       (config) => {
-        const accessToken = auth?.accessToken;
+        const accessToken = locValue?.accessToken;
         if (accessToken) {
           config.headers.Authorization = `Bearer ${accessToken}`;
         }
@@ -29,11 +29,11 @@ export const useAxios = () => {
         console.log(error);
         const originalRequest = error.config;
         console.log(originalRequest);
-        if (error.response.status === 403 && !originalRequest._retry) {
+        if (error?.response?.status === 403 && !originalRequest._retry) {
           originalRequest._retry = true;
 
           try {
-            const refreshToken = auth?.refreshToken;
+            const refreshToken = locValue?.refreshToken;
             const res = await axios.post(
               `${import.meta.env.VITE_SERVER_BASE_URL}/auth/refresh-token`,
               { refreshToken }
@@ -41,7 +41,7 @@ export const useAxios = () => {
 
             console.log(res);
             const { token } = res.data;
-            setAuth({ ...auth, accessToken: token });
+            refresh(token);
 
             originalRequest.headers.Authorization = `Bearer ${token}`;
             return axios(originalRequest);
@@ -58,7 +58,7 @@ export const useAxios = () => {
       api.interceptors.request.eject(requestInterceptor);
       api.interceptors.response.eject(responseInterceptor);
     };
-  }, [auth]);
+  }, []);
 
   return { api };
 };

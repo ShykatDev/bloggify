@@ -56,7 +56,11 @@ const SearchContainer = ({ setSearch }) => {
           </div>
 
           {searchText.length !== 0 && (
-            <SearchResults error={error} searchResult={searchResult} />
+            <SearchResults
+              error={error}
+              searchResult={searchResult}
+              setSearch={setSearch}
+            />
           )}
 
           <button onClick={() => setSearch(false)}>

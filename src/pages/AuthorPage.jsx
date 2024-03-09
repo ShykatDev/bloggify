@@ -1,9 +1,36 @@
+import { useEffect } from "react";
 import BlogsList from "../components/profile/BlogsList";
 import { useAuthor } from "../hooks/useAuthor";
 import { getDummyImage } from "../utils";
+import { actions } from "../actions";
+import { useParams } from "react-router-dom";
+import axios from "axios";
 
 const AuthorPage = () => {
-  const { state } = useAuthor();
+  const { state, dispatch } = useAuthor();
+  const { authorId } = useParams();
+
+  useEffect(() => {
+    const fetchProfile = async () => {
+      dispatch({ type: actions.author.DATA_FETCHING });
+      try {
+        const response = await axios.get(
+          `${import.meta.env.VITE_SERVER_BASE_URL}/profile/${authorId}`
+        );
+
+        if (response.status === 200) {
+          dispatch({ type: actions.author.DATA_FETCHED, data: response.data });
+        }
+      } catch (err) {
+        dispatch({
+          type: actions.author.DATA_FETCHED_ERROR,
+          error: err.message,
+        });
+      }
+    };
+
+    fetchProfile();
+  }, []);
 
   return (
     <main className="mx-auto max-w-[1020px] py-8">
@@ -16,7 +43,7 @@ const AuthorPage = () => {
               </div>
             )}
 
-            {state?.user?.avatar !== null && (
+            {state?.author?.avatar !== null && (
               <img
                 src={`${import.meta.env.VITE_SERVER_BASE_URL}/uploads/avatar/${
                   state?.author?.avatar

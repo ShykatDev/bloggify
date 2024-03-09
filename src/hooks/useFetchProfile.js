@@ -16,7 +16,7 @@ export const useFetchProfile = (author) => {
 
       if (response.status === 200) {
         dispatch({ type: actions.author.DATA_FETCHED, data: response.data });
-        navigate("/author");
+        navigate(`/author/${author?.id}`);
       }
     } catch (err) {
       dispatch({

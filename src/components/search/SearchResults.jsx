@@ -1,6 +1,6 @@
 import SearchResultCard from "./SearchResultCard";
 
-const SearchResults = ({ searchResult, error }) => {
+const SearchResults = ({ searchResult, error, setSearch }) => {
   return (
     <div className="">
       <h3 className="text-slate-400 font-bold mt-6">
@@ -14,7 +14,13 @@ const SearchResults = ({ searchResult, error }) => {
           </div>
         ) : (
           searchResult?.data?.map((res) => {
-            return <SearchResultCard key={res?.id} result={res} />;
+            return (
+              <SearchResultCard
+                key={res?.id}
+                result={res}
+                setSearch={setSearch}
+              />
+            );
           })
         )}
 

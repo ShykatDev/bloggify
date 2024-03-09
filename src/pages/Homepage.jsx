@@ -2,10 +2,11 @@ import { Link } from "react-router-dom";
 import BlogContent from "../components/home/BlogContent";
 import Favourites from "../components/home/Favourites";
 import MostPopular from "../components/home/MostPopular";
-import { useAuth } from "../hooks/useAuth";
+import { useToken } from "../hooks/useToken";
 
 const Homepage = () => {
-  const { auth } = useAuth();
+  const { locValue: auth } = useToken();
+
   return (
     <main>
       <section>
