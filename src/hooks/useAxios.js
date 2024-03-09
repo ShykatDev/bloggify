@@ -26,9 +26,7 @@ export const useAxios = () => {
         return response;
       },
       async (error) => {
-        console.log(error);
         const originalRequest = error.config;
-        console.log(originalRequest);
         if (error?.response?.status === 403 && !originalRequest._retry) {
           originalRequest._retry = true;
 
@@ -39,7 +37,6 @@ export const useAxios = () => {
               { refreshToken }
             );
 
-            console.log(res);
             const { token } = res.data;
             refresh(token);
 

@@ -79,8 +79,6 @@ const BlogForm = ({ isEdit }) => {
             toast("Blog updated.");
             navigate(`/blogs/${response?.data?.id}`);
           }
-
-          console.log(response);
         } else {
           const response = await api.post(
             `${import.meta.env.VITE_SERVER_BASE_URL}/blogs`,

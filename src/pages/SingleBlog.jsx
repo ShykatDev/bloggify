@@ -28,7 +28,7 @@ const SingleBlog = () => {
           setLikes(response.data.likes);
         }
       } catch (err) {
-        console.log(err);
+        console.error(err);
       } finally {
         setIsLoading(false);
       }

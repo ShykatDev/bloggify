@@ -30,7 +30,6 @@ const ProfileImage = () => {
       );
 
       if (response.status === 200) {
-        console.log(response);
         dispatch({
           type: actions.profile.IMAGE_UPDATED,
           data: response.data,

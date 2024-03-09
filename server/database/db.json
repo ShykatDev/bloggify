@@ -68,7 +68,7 @@
       "firstName": "Shykat",
       "lastName": "Raha",
       "avatar": "avatar-1709989259786-290853110.jpg",
-      "bio": "",
+      "bio": "Hey, I am a frontend Developer.",
       "password": "$2b$08$NK3lL.CaxDMC.hNrd9Gi.OWpTfTybDI4Zo.Cc.wCOFxJPljUS4DTi",
       "favourites": []
     }
@@ -95,9 +95,6 @@
         },
         {
           "id": "3d2dde4b6548275fb066"
-        },
-        {
-          "id": "2d0ca8074af08ed9a511"
         }
       ],
       "comments": [
@@ -327,6 +324,23 @@
       "likes": [],
       "comments": [],
       "createdAt": "2024-02-24T17:06:43.629Z"
+    },
+    {
+      "id": "a0e366072926143f48c2",
+      "title": "websimp_",
+      "content": "Simple web related videos",
+      "thumbnail": "thumbnail-1709992521033-40515450.png",
+      "author": {
+        "id": "2d0ca8074af08ed9a511",
+        "firstName": "Shykat",
+        "lastName": "Raha",
+        "avatar": "avatar-1709989259786-290853110.jpg"
+      },
+      "tags": "simpor, web, js",
+      "likes": [],
+      "comments": [],
+      "createdAt": "2024-03-09T13:55:21.035Z",
+      "isFavourite": true
     }
   ]
 }

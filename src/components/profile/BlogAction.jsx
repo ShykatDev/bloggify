@@ -7,9 +7,12 @@ import { useProfile } from "../../hooks/useProfile";
 import { actions } from "../../actions";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import Portal from "../common/Portal";
+import DeleteConfirm from "../common/DeleteConfirm";
 
 const BlogAction = ({ blogId }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [delPopup, setDelPopup] = useState(false);
   const { api } = useAxios();
   const { dispatch } = useProfile();
   const navigate = useNavigate();
@@ -34,8 +37,14 @@ const BlogAction = ({ blogId }) => {
         toast.success("Blog Deleted");
       }
     } catch (err) {
-      console.log(err);
+      console.error(err);
     }
+  };
+
+  const handleClose = (e) => {
+    e.stopPropagation();
+    setDelPopup(false);
+    setIsOpen(false);
   };
 
   const handleBlogEdit = (e) => {
@@ -59,13 +68,22 @@ const BlogAction = ({ blogId }) => {
             Edit
           </button>
           <button
-            onClick={handleDeleteBlog}
+            onClick={(e) => {
+              e.stopPropagation();
+              setDelPopup(true);
+            }}
             className="action-menu-item hover:text-red-500"
           >
             <img src={delIcon} alt="Delete" />
             Delete
           </button>
         </div>
+      )}
+
+      {delPopup && (
+        <Portal>
+          <DeleteConfirm onClose={handleClose} onDelete={handleDeleteBlog} />
+        </Portal>
       )}
     </div>
   );

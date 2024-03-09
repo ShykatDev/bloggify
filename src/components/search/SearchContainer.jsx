@@ -28,7 +28,7 @@ const SearchContainer = ({ setSearch }) => {
           setError("No result found");
         }
       } catch (err) {
-        console.log(err);
+        console.error(err);
       }
     };
     fetchSearchResult();
