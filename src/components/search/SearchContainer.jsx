@@ -1,24 +1,23 @@
 import SearchResults from "./SearchResults";
 import closeIcon from "../../assets/icons/close.svg";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useAxios } from "../../hooks/useAxios";
+import { useDebounce } from "../../hooks/useDebounce";
+import SearchLoading from "../loading/SearchLoading";
 
 const SearchContainer = ({ setSearch }) => {
   const [searchText, setSearchText] = useState("");
   const [searchResult, setSearchResult] = useState(null);
   const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(true);
   const { api } = useAxios();
 
-  const handleChange = (e) => {
-    e.stopPropagation();
-    setSearchText(e.target.value);
-  };
-
-  useEffect(() => {
+  const doSearch = useDebounce((search) => {
     const fetchSearchResult = async () => {
       try {
+        setLoading(true);
         const response = await api.get(
-          `${import.meta.env.VITE_SERVER_BASE_URL}/search?q=${searchText}`
+          `${import.meta.env.VITE_SERVER_BASE_URL}/search?q=${search}`
         );
 
         if (response.status === 200) {
@@ -29,10 +28,19 @@ const SearchContainer = ({ setSearch }) => {
         }
       } catch (err) {
         console.error(err);
+      } finally {
+        setLoading(false);
       }
     };
     fetchSearchResult();
-  }, [api, searchText]);
+  }, 500);
+
+  const handleChange = (e) => {
+    e.stopPropagation();
+    setSearchText(e.target.value);
+
+    doSearch(e.target.value);
+  };
 
   return (
     <>
@@ -54,6 +62,8 @@ const SearchContainer = ({ setSearch }) => {
               className="w-full bg-transparent p-2 text-base text-white outline-none border-none rounded-lg focus:ring focus:ring-indigo-600"
             />
           </div>
+
+          {loading && searchText.length === 0 && <SearchLoading />}
 
           {searchText.length !== 0 && (
             <SearchResults

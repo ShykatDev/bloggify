@@ -7,14 +7,15 @@ import { actions } from "../../actions";
 import { toast } from "react-toastify";
 import { useState } from "react";
 import SearchContainer from "../search/SearchContainer";
-import Portal from "./Portal";
 import { useToken } from "../../hooks/useToken";
+import { usePortal } from "../../hooks/usePortal";
 
 const Navbar = () => {
   const { locValue: auth, removeLocal } = useToken();
   const { state, dispatch } = useProfile();
   const [search, setSearch] = useState(false);
 
+  const { Portal } = usePortal();
   const user = state?.user ?? auth?.user;
   const navigate = useNavigate();
 

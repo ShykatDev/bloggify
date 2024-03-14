@@ -1,5 +1,5 @@
 import DOMPurify from "dompurify";
-import { getDummyImage } from "../../utils";
+import { formatDate, getDummyImage } from "../../utils";
 import { useFetchProfile } from "../../hooks/useFetchProfile";
 
 const BlogInfo = ({ blog }) => {
@@ -37,7 +37,9 @@ const BlogInfo = ({ blog }) => {
               className="text-slate-500 text-sm group-hover:text-slate-300 cursor-pointer duration-300"
             >{`${user?.firstName} ${user?.lastName}`}</h5>
           </div>
-          <span className="text-sm text-slate-700 dot">June 28, 2018</span>
+          <span className="text-sm text-slate-700 dot">
+            {formatDate(blog?.createdAt)}
+          </span>
           <span className="text-sm text-slate-700 dot">
             {blog?.likes.length} Likes
           </span>

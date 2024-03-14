@@ -4,10 +4,10 @@ import delIcon from "../../assets/icons/delete.svg";
 import { useState } from "react";
 import { useAxios } from "../../hooks/useAxios";
 import { useProfile } from "../../hooks/useProfile";
+import { usePortal } from "../../hooks/usePortal";
 import { actions } from "../../actions";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import Portal from "../common/Portal";
 import DeleteConfirm from "../common/DeleteConfirm";
 
 const BlogAction = ({ blogId }) => {
@@ -16,6 +16,7 @@ const BlogAction = ({ blogId }) => {
   const { api } = useAxios();
   const { dispatch } = useProfile();
   const navigate = useNavigate();
+  const { Portal } = usePortal();
 
   const handleOpen = (e) => {
     e.stopPropagation();

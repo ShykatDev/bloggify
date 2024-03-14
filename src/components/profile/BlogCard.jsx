@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { useProfile } from "../../hooks/useProfile";
 import BlogAction from "./BlogAction";
 import { useFetchProfile } from "../../hooks/useFetchProfile";
-import { getDummyImage } from "../../utils";
+import { formatDate, getDummyImage } from "../../utils";
 import { useToken } from "../../hooks/useToken";
 
 const BlogCard = ({ blog }) => {
@@ -63,7 +63,7 @@ const BlogCard = ({ blog }) => {
                 {author?.firstName} {author?.lastName}
               </h5>
               <div className="flex items-center text-xs text-slate-700">
-                <span>June 28, 2018</span>
+                <span>{formatDate(blog?.createdAt)}</span>
               </div>
             </div>
           </div>

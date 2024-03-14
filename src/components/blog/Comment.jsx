@@ -2,8 +2,14 @@ import { getDummyImage } from "../../utils";
 import delIcon from "../../assets/icons/delete.svg";
 import { useAxios } from "../../hooks/useAxios";
 import { useToken } from "../../hooks/useToken";
+import { useState } from "react";
+import { usePortal } from "../../hooks/usePortal";
+import DeleteConfirm from "../common/DeleteConfirm";
 
 const Comment = ({ blog, comment, setComments }) => {
+  const [delPopup, setDelPopup] = useState(false);
+  const { Portal } = usePortal();
+
   const bgColor = [
     "bg-orange-600",
     "bg-blue-600",
@@ -59,9 +65,21 @@ const Comment = ({ blog, comment, setComments }) => {
         <p className="text-slate-300">{comment?.content}</p>
       </div>
       {loginUser && (
-        <button onClick={deleteComment} className=" hover:text-red-500">
+        <button
+          onClick={() => setDelPopup(true)}
+          className=" hover:text-red-500"
+        >
           <img src={delIcon} alt="Delete" />
         </button>
+      )}
+
+      {delPopup && (
+        <Portal>
+          <DeleteConfirm
+            onClose={() => setDelPopup(false)}
+            onDelete={deleteComment}
+          />
+        </Portal>
       )}
     </div>
   );
